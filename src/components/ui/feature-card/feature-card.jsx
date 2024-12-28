@@ -1,5 +1,5 @@
-import { Title, TitleSize } from "../title/title.jsx"
-import "./style.css"
+import Title, { TitleSize } from "../title/title.jsx"
+import { Feature, Image, Owner, Header, Text } from "./styles";
 
 // Карточка
 function FeatureCard({
@@ -10,30 +10,27 @@ function FeatureCard({
     image // иконка
 }) {
     return (
-        <section className={`feature${isNegative ? " feature_negative" : ""}`}>
-            <header className="feature__header">
-                <img
-                    className="feature__img"
+        <Feature isNegative={isNegative}>
+            <Header>
+                <Image
                     width={56}
                     height={56}
                     src={image}
                     alt={title}
                 />
                 <div>
-                    <span
-                        className={`feature__owner${isNegative ? " feature__owner_negative" : ""
-                            }`}
-                    >
+                    <Owner isNegative={isNegative} >
                         {owner}
-                    </span>
-                    <Title size={TitleSize.EXTRA_SMALL}>{title}</Title>
+                    </Owner>
+                    <Title size={TitleSize.EXTRA_SMALL} as="h3">
+                        {title}
+                        </Title>
                 </div>
-            </header>
-            <p
-                className="feature__text"
+            </Header>
+            <Text
                 dangerouslySetInnerHTML={{ __html: about }}
             />
-        </section>
+        </Feature>
     );
 }
 

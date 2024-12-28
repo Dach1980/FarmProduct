@@ -1,10 +1,13 @@
 import PageWrapper from '../layout/page-wrapper/page-wrapper.jsx'
 import features from '../../mocks/features.jsx'
-import './Style.css'
+import { GlobalStyle } from "./styles";
 
 function App() {
   return (
-    <PageWrapper features={features} />
+    <>
+      <GlobalStyle />
+      <PageWrapper features={features}>Контент страницы</PageWrapper >
+    </>
   )
 }
 

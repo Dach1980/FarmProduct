@@ -1,22 +1,23 @@
-import { Title } from "../../ui/title/title.jsx"
-import Button from "../../ui/button/button.jsx"
 import FeatureCard from "../../ui/feature-card/feature-card.jsx";
-import "./style.css"
+import { Ul, Li } from "/src/components/styled";
+import { Features, StyledButton, StyledTitle } from "./styles";
 
 // список преимуществ
-function FeaturesList({ features }) {
+function FeaturesList({ 
+    features // преимущества - массив объектов с id, title, owner, isNegative, image, about
+}) {
     return features && features.length ? (
-        <section className="features">
-            <Title>Почему фермерские продукты лучше?</Title>
-            <ul className="features__list">
+        <Features>
+            <StyledTitle as="h2">Почему фермерские продукты лучше?</StyledTitle>
+            <Ul $isGridList>
                 {features.map((feature) => (
-                    <li className="features__item" key={feature.id}>
+                    <Li key={feature.id}>
                         <FeatureCard {...feature}/>
-                    </li>
+                    </Li>
                 ))}
-            </ul>
-            <Button minWidth={353}>Купить</Button>
-        </section>
+            </Ul>
+            <StyledButton link="/buy">Купить</StyledButton>
+        </Features>
     ) : null;
 }
 
