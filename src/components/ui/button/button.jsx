@@ -17,7 +17,7 @@ function Button({
         >
             {children}
         </StyledButton>
-    )
+    );
 }
 
-export default Button
+export default Button;

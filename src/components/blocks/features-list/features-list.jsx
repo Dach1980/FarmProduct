@@ -1,6 +1,7 @@
 import FeatureCard from "../../ui/feature-card/feature-card.jsx";
 import { Ul, Li } from "/src/components/styled";
 import { Features, StyledButton, StyledTitle } from "./styles";
+import { AppRoute } from "../../../const.jsx";
 
 // список преимуществ
 function FeaturesList({ 
@@ -16,7 +17,7 @@ function FeaturesList({
                     </Li>
                 ))}
             </Ul>
-            <StyledButton link="/buy">Купить</StyledButton>
+            <StyledButton link={AppRoute.ORDER}>Купить</StyledButton>
         </Features>
     ) : null;
 }

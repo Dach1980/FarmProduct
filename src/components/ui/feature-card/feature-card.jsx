@@ -1,7 +1,7 @@
 import Title, { TitleSize } from "../title/title.jsx"
 import { Feature, Image, Owner, Header, Text } from "./styles";
 
-// Карточка
+// Карточка магазина
 function FeatureCard({
     title, // название особенности
     owner, // владелец особенности (обычный магазин, фермерский)
@@ -12,24 +12,15 @@ function FeatureCard({
     return (
         <Feature isNegative={isNegative}>
             <Header>
-                <Image
-                    width={56}
-                    height={56}
-                    src={image}
-                    alt={title}
-                />
+                <Image width={56} height={56} src={image} alt={title} />
                 <div>
-                    <Owner isNegative={isNegative} >
-                        {owner}
-                    </Owner>
-                    <Title size={TitleSize.EXTRA_SMALL} as="h3">
+                    <Owner isNegative={isNegative}>{owner}</Owner>
+                    <Title as="h3" size={TitleSize.EXTRA_SMALL}>
                         {title}
-                        </Title>
+                    </Title>
                 </div>
             </Header>
-            <Text
-                dangerouslySetInnerHTML={{ __html: about }}
-            />
+            <Text dangerouslySetInnerHTML={{ __html: about }} />
         </Feature>
     );
 }

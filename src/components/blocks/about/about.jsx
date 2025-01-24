@@ -1,6 +1,7 @@
 import Title, { TitleSize } from "../../ui/title/title"
 import { Text, StyledAbout } from "./styles";
 
+// Раздел о магазине фермерских продуктов
 function About() {
     return (
         <StyledAbout>

@@ -1,6 +1,7 @@
 import Logo from "../../ui/logo/logo"
 import { StyledSection, Copyright } from "./styles";
 
+// подвал сайта
 function Footer() {
     return (
     <StyledSection as="footer">
